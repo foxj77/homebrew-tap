@@ -5,13 +5,13 @@
 class Claudectx < Formula
   desc "Fast, safe profile switching for Claude Code"
   homepage "https://github.com/foxj77/claudectx"
-  version "1.1.0"
+  version "1.1.1"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/foxj77/claudectx/releases/download/v1.1.0/claudectx_1.1.0_darwin_amd64.tar.gz"
-      sha256 "e00008b9c0bb95a93bc347a2a41e7cb0cdbb29e131c7258139a7614d81ff2661"
+    if Hardware::CPU.intel?
+      url "https://github.com/foxj77/claudectx/releases/download/v1.1.1/claudectx_1.1.1_darwin_amd64.tar.gz"
+      sha256 "d315b29c74b83d9e739b8124dd69f1a0a8e0c55b53ef4c0f236eee2cd893e7ea"
 
       def install
         bin.install "claudectx"
@@ -22,9 +22,9 @@ class Claudectx < Formula
         fish_completion.install "completion/fish_completion.fish"
       end
     end
-    on_arm do
-      url "https://github.com/foxj77/claudectx/releases/download/v1.1.0/claudectx_1.1.0_darwin_arm64.tar.gz"
-      sha256 "c569fca0f7b71c684385a3318090daff459a3d4009b47d2e2bdbb137289e6804"
+    if Hardware::CPU.arm?
+      url "https://github.com/foxj77/claudectx/releases/download/v1.1.1/claudectx_1.1.1_darwin_arm64.tar.gz"
+      sha256 "fd35a76012f97df94c79b4e7646c2d550880c8a003b151646e33730d287b79d2"
 
       def install
         bin.install "claudectx"
@@ -38,34 +38,28 @@ class Claudectx < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/foxj77/claudectx/releases/download/v1.1.0/claudectx_1.1.0_linux_amd64.tar.gz"
-        sha256 "65e159f281952b0f66c560636701f1d30762a45edb9f676f33da063452fafc5e"
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/foxj77/claudectx/releases/download/v1.1.1/claudectx_1.1.1_linux_amd64.tar.gz"
+      sha256 "a45637c6ae67f49e384a0c82b0bb29d80fd7bc2424e72da060000ebe3660f6ed"
+      def install
+        bin.install "claudectx"
 
-        def install
-          bin.install "claudectx"
-
-          # Install shell completions
-          bash_completion.install "completion/bash_completion.sh" => "claudectx"
-          zsh_completion.install "completion/zsh_completion.sh" => "_claudectx"
-          fish_completion.install "completion/fish_completion.fish"
-        end
+        # Install shell completions
+        bash_completion.install "completion/bash_completion.sh" => "claudectx"
+        zsh_completion.install "completion/zsh_completion.sh" => "_claudectx"
+        fish_completion.install "completion/fish_completion.fish"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/foxj77/claudectx/releases/download/v1.1.0/claudectx_1.1.0_linux_arm64.tar.gz"
-        sha256 "75bd79fb22f2b4c7358df1e511ac7120a8b8c8a7d75fa12006f77fbc8e1cfe2e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/foxj77/claudectx/releases/download/v1.1.1/claudectx_1.1.1_linux_arm64.tar.gz"
+      sha256 "ada80693246074e9f38d069a1902b80c4b3647d931be623c653b636fbb6402cf"
+      def install
+        bin.install "claudectx"
 
-        def install
-          bin.install "claudectx"
-
-          # Install shell completions
-          bash_completion.install "completion/bash_completion.sh" => "claudectx"
-          zsh_completion.install "completion/zsh_completion.sh" => "_claudectx"
-          fish_completion.install "completion/fish_completion.fish"
-        end
+        # Install shell completions
+        bash_completion.install "completion/bash_completion.sh" => "claudectx"
+        zsh_completion.install "completion/zsh_completion.sh" => "_claudectx"
+        fish_completion.install "completion/fish_completion.fish"
       end
     end
   end
