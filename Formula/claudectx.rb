@@ -5,13 +5,13 @@
 class Claudectx < Formula
   desc "Fast, safe profile switching for Claude Code"
   homepage "https://github.com/foxj77/claudectx"
-  version "1.1.1"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/foxj77/claudectx/releases/download/v1.1.1/claudectx_1.1.1_darwin_amd64.tar.gz"
-      sha256 "d315b29c74b83d9e739b8124dd69f1a0a8e0c55b53ef4c0f236eee2cd893e7ea"
+      url "https://github.com/foxj77/claudectx/releases/download/v1.2.0/claudectx_1.2.0_darwin_amd64.tar.gz"
+      sha256 "ab65bcbf9bef683b0463b7e991123b36a6a5937cd7ebe5f4ff56ac4c586d60b3"
 
       def install
         bin.install "claudectx"
@@ -23,8 +23,8 @@ class Claudectx < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/foxj77/claudectx/releases/download/v1.1.1/claudectx_1.1.1_darwin_arm64.tar.gz"
-      sha256 "fd35a76012f97df94c79b4e7646c2d550880c8a003b151646e33730d287b79d2"
+      url "https://github.com/foxj77/claudectx/releases/download/v1.2.0/claudectx_1.2.0_darwin_arm64.tar.gz"
+      sha256 "be7e2d80039c4e1202aaf4f86006205581b026513cefc7a3411ef8a4c8092bc8"
 
       def install
         bin.install "claudectx"
@@ -39,8 +39,8 @@ class Claudectx < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/foxj77/claudectx/releases/download/v1.1.1/claudectx_1.1.1_linux_amd64.tar.gz"
-      sha256 "a45637c6ae67f49e384a0c82b0bb29d80fd7bc2424e72da060000ebe3660f6ed"
+      url "https://github.com/foxj77/claudectx/releases/download/v1.2.0/claudectx_1.2.0_linux_amd64.tar.gz"
+      sha256 "b2aab8382bb6aae7f02d81d9db244aba68faaceba9a32aea9ae3195cfe921634"
       def install
         bin.install "claudectx"
 
@@ -51,8 +51,8 @@ class Claudectx < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/foxj77/claudectx/releases/download/v1.1.1/claudectx_1.1.1_linux_arm64.tar.gz"
-      sha256 "ada80693246074e9f38d069a1902b80c4b3647d931be623c653b636fbb6402cf"
+      url "https://github.com/foxj77/claudectx/releases/download/v1.2.0/claudectx_1.2.0_linux_arm64.tar.gz"
+      sha256 "3100ce9b2e10c479f8544273f2d67af6748817c38b3c2b116464cd0ee0b13c28"
       def install
         bin.install "claudectx"
 
