@@ -5,13 +5,13 @@
 class Claudectx < Formula
   desc "Fast, safe profile switching for Claude Code"
   homepage "https://github.com/foxj77/claudectx"
-  version "1.2.3"
+  version "1.2.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/foxj77/claudectx/releases/download/v1.2.3/claudectx_1.2.3_darwin_amd64.tar.gz"
-      sha256 "0296506e9780595dfc0b30ad0abb59561263ad1bee5e92fc759ffa3cf0ab3aef"
+      url "https://github.com/foxj77/claudectx/releases/download/v1.2.4/claudectx_1.2.4_darwin_amd64.tar.gz"
+      sha256 "361142f067027b3a98ef644c9ff972e5f059285fbef2a592fde10b1ddac3744a"
 
       define_method(:install) do
         bin.install "claudectx"
@@ -23,8 +23,8 @@ class Claudectx < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/foxj77/claudectx/releases/download/v1.2.3/claudectx_1.2.3_darwin_arm64.tar.gz"
-      sha256 "cded5ea6822ddd1a0e8e4b99a4baebf64d008556440dcdbddf29caafa929e497"
+      url "https://github.com/foxj77/claudectx/releases/download/v1.2.4/claudectx_1.2.4_darwin_arm64.tar.gz"
+      sha256 "acb1659b95d742dd06973efb09efea8458996f8a4c51c52642fce41e0478e6d2"
 
       define_method(:install) do
         bin.install "claudectx"
@@ -39,8 +39,8 @@ class Claudectx < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/foxj77/claudectx/releases/download/v1.2.3/claudectx_1.2.3_linux_amd64.tar.gz"
-      sha256 "6a5bf858b0bab12fa68e2d9db08f0abf361dac48dd33339684acf00f074e6cc7"
+      url "https://github.com/foxj77/claudectx/releases/download/v1.2.4/claudectx_1.2.4_linux_amd64.tar.gz"
+      sha256 "0cb3f8c098b24422217659a70b0acacac3f56c4cdbcbc1939b9a098149ce0233"
       define_method(:install) do
         bin.install "claudectx"
 
@@ -51,8 +51,8 @@ class Claudectx < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/foxj77/claudectx/releases/download/v1.2.3/claudectx_1.2.3_linux_arm64.tar.gz"
-      sha256 "22a38e6227362e68990ca42da565f61e90e32aed1098e20364ae41af7d79b00b"
+      url "https://github.com/foxj77/claudectx/releases/download/v1.2.4/claudectx_1.2.4_linux_arm64.tar.gz"
+      sha256 "5c6631f7a2401e57a24234d1468ccfcb4ef4bc1ff9f3531669751ea91bbffb56"
       define_method(:install) do
         bin.install "claudectx"
 
